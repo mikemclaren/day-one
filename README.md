@@ -5,6 +5,8 @@ Spins up and grabs the most recent commits on this repository. This repo is
 a really simple GraphQL execution that gives at least a little insight into how
 GraphQL is set up and works. Try it out!
 
+You can try out the GraphQL server without spinning up locally by visiting [http://day-one.mikemclaren.io/query](http://day-one.mikemclaren.io/query)
+
 ## Spinning Up
 You'll need to be running Node 4.0+!
 
