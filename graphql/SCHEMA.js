@@ -1,7 +1,9 @@
 import {
   GraphQLSchema,
   GraphQLObjectType,
-  GraphQLList
+  GraphQLList,
+  GraphQLNonNull,
+  GraphQLString
 } from 'graphql';
 
 import CommitType from './types/CommitType';
@@ -13,6 +15,16 @@ let QueryType = new GraphQLObjectType({
     commits: {
       type: new GraphQLList(CommitType),
       resolve: Commit.fetchAll
+    },
+    commit: {
+      type: CommitType,
+      args: {
+        sha: {
+          name: 'sha',
+          type: new GraphQLNonNull(GraphQLString)
+        }
+      },
+      resolve: Commit.fetchBySha
     }
   })
 });

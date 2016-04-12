@@ -22,6 +22,10 @@ let CommitType = new GraphQLObjectType({
     message: {
       type: GraphQLString,
       description: 'The message for the commit'
+    },
+    sha: {
+      type: GraphQLString,
+      description: 'The SHA hash of the commit'
     }
   })
 });
