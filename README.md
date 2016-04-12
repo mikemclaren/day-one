@@ -21,7 +21,11 @@ so try this out in GraphiQL:
 query {
   commits {
     url
-    author
+    author {
+      login
+      name
+      id
+    }
     time
     message
   }

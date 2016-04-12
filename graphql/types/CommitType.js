@@ -3,6 +3,8 @@ import {
   GraphQLObjectType
 } from 'graphql';
 
+import AuthorType from './AuthorType';
+
 let CommitType = new GraphQLObjectType({
   name: 'Commit',
   description: 'A Github commit for the Day-One repo!',
@@ -12,8 +14,11 @@ let CommitType = new GraphQLObjectType({
       description: 'The URL for the commit'
     },
     author: {
-      type: GraphQLString,
-      description: 'The author of the commit'
+      type: AuthorType,
+      description: 'The author of the commit',
+      resolve: (root) => {
+        return root.author;
+      }
     },
     time: {
       type: GraphQLString,

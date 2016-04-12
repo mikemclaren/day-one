@@ -6,7 +6,12 @@ let Commit = {
       return {
         sha: commit.sha,
         url: commit.url,
-        author: commit.commit.author.name,
+        author: {
+          name: commit.commit.author.name,
+          email: commit.commit.author.email,
+          id: commit.author.id,
+          login: commit.author.login
+        },
         time: commit.commit.author.date,
         message: commit.commit.message
       }
