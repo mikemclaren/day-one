@@ -1,7 +1,9 @@
 # Day One
-A GraphQL server, utilizing Koa v2, and Babel!
+A GraphQL server, utilizing Koa v2, and Babel.
 
-Spins up and grabs the most recent commits on this repository. Try it out!
+Spins up and grabs the most recent commits on this repository. This repo is
+a really simple GraphQL execution that gives at least a little insight into how
+GraphQL is set up and works. Try it out!
 
 ## Spinning Up
 You'll need to be running Node 4.0+!
