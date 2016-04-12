@@ -25,6 +25,7 @@ query {
       login
       name
       id
+      email
     }
     time
     message
