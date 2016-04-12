@@ -7,7 +7,9 @@ import {
 } from 'graphql';
 
 import CommitType from './types/CommitType';
+import AuthorType from './types/AuthorType';
 import Commit from './models/Commit';
+import Author from './models/Author';
 
 let QueryType = new GraphQLObjectType({
   name: 'Query',
@@ -25,6 +27,10 @@ let QueryType = new GraphQLObjectType({
         }
       },
       resolve: Commit.fetchBySha
+    },
+    authors: {
+      type: new GraphQLList(AuthorType),
+      resolve: Author.fetchAll
     }
   })
 });

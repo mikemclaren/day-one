@@ -30,8 +30,28 @@ query {
     time
     message
   }
-}
+
+  authors {
+    id
+    name
+    email
+    login
+    commits {
+      url
+      author {
+        login
+        name
+        id
+        email
+      }
+      time
+      message
+    }
+  }}
 ```
+
+Try taking some objects out, mix and match, give it a try! GraphiQL will tell you
+when you mess up.
 
 Optionally, you can search for just a single commit using the SHA of that commit, like this:
 

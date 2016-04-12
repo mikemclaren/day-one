@@ -1,7 +1,11 @@
 import {
   GraphQLString,
-  GraphQLObjectType
+  GraphQLObjectType,
+  GraphQLList
 } from 'graphql';
+
+import Commit from '../models/Commit';
+import CommitType from './CommitType';
 
 let AuthorType = new GraphQLObjectType({
   name: 'Author',
@@ -22,6 +26,13 @@ let AuthorType = new GraphQLObjectType({
     email: {
       type: GraphQLString,
       description: 'The email address of the author'
+    },
+    commits: {
+      type: new GraphQLList(CommitType),
+      description: 'The commits this user has given',
+      resolve: (root) => {
+        return Commit.processCommits(root.commits);
+      }
     }
   })
 });
